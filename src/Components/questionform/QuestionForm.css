@@ -1,0 +1,17 @@
+.questionForm {
+  background-color: whitesmoke;
+  padding: 3%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
+  -webkit-box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
+}
+
+.questionForm__questionContainer {
+  margin-bottom: 10px;
+}
+
+.questionForm__answers {
+  display: flex;
+  flex-direction: column;
+}
