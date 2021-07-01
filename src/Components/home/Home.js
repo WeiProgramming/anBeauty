@@ -5,6 +5,7 @@ import Signup from '../signup/Signup'
 
 const Home = () => {
   const homeFormRef = useRef(null)
+  const questionRef =useRef(null)
   return (
     <div className="home">
       <div className="home__hero">
@@ -23,9 +24,9 @@ const Home = () => {
           <Signup formRef={homeFormRef}></Signup>
         </div>
       </div>
-      <div className="home__form" ref={homeFormRef}>
+      <div className="home__form" ref={questionRef}>
         <h2>Let's get started</h2>
-        <QuestionForm></QuestionForm>
+        <QuestionForm questionRef={questionRef}></QuestionForm>
       </div>
     </div>
   )

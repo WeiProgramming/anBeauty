@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './QuestionForm.css'
+import { useScreenshot } from "use-screenshot-hook";
+
 const initialForm = {
   skinType: {
     normal: false,
@@ -8,8 +10,10 @@ const initialForm = {
     combination: false,
   },
 }
-const QuestionForm = () => {
+const QuestionForm = ({questionRef}) => {
   const [formValues, setFormValues] = useState(initialForm)
+  const { image, takeScreenshot } = useScreenshot(questionRef);
+
   const handleCheckboxChange = (e) => {
     //   console.log(e)
     setFormValues({
@@ -134,7 +138,10 @@ const QuestionForm = () => {
             </label>
           </div>
         </div>
+        <button onClick={(e) => {e.preventDefault();takeScreenshot();}}>Submit</button>
       </form>
+      {image && <img src={image} />}
+
     </div>
   )
 }
