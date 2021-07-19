@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './Signup.css'
 import validator from 'validator'
+import { useHistory } from 'react-router'
 
 import { db } from '../../firebase'
 
-const Signup = ({ formRef }) => {
+const Signup = () => {
+  const history = useHistory();
   const [signupForm, setSignupForm] = useState({
     email: '',
     first: '',
@@ -61,7 +63,7 @@ const Signup = ({ formRef }) => {
                   first: '',
                   last: '',
                 })
-                formRef.current.scrollIntoView()
+                history.push('/question')
               })
               .catch((err) => {
                 alert('trouble adding lead')

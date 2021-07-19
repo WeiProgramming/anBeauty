@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './QuestionForm.css'
-import { useScreenshot } from "use-screenshot-hook";
+import { useScreenshot } from 'use-screenshot-hook'
+import { storage } from '../../firebase'
 
 const initialForm = {
   skinType: {
@@ -10,9 +11,9 @@ const initialForm = {
     combination: false,
   },
 }
-const QuestionForm = ({questionRef}) => {
+const QuestionForm = ({ questionRef }) => {
   const [formValues, setFormValues] = useState(initialForm)
-  const { image, takeScreenshot } = useScreenshot(questionRef);
+  const { image, takeScreenshot } = useScreenshot(questionRef)
 
   const handleCheckboxChange = (e) => {
     //   console.log(e)
@@ -24,10 +25,18 @@ const QuestionForm = ({questionRef}) => {
       },
     })
   }
+
+  const tryTakeScreenshot = () => {
+    takeScreenshot()
+    let storageRef = storage.ref('testing')
+    storageRef.put(image).then((snap) => {
+      console.log('Uploaded a blob or file ', snap)
+    })
+  }
+
   console.log(formValues)
   return (
     <div className="questionForm">
-      
       <form>
         <h3>Your Custom Skin Quistionnaire</h3>
         <div className="questionForm__questionContainer">
@@ -138,10 +147,17 @@ const QuestionForm = ({questionRef}) => {
             </label>
           </div>
         </div>
-        <button onClick={(e) => {e.preventDefault();takeScreenshot();}}>Submit</button>
       </form>
-      {image && <img src={image} />}
+      <button
+        onClick={(e) => {
+          e.preventDefault()
+          tryTakeScreenshot()
+        }}
+      >
+        Submit
+      </button>
 
+      {image && <img src={image} />}
     </div>
   )
 }
