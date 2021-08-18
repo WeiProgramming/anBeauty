@@ -3,14 +3,16 @@
   padding: 5%;
   width: 90%;
   border-radius: 5px;
-  box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
-  -webkit-box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
-  -moz-box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 5px rgb(209 170 250);
+  -webkit-box-shadow: 2px 5px rgb(209 170 250);
+  -moz-box-shadow: 2px 5px rgb(209 170 250);
 }
 
 .signup > h2 {
-  color: #d3312b;
+  color: #b8336a;
   text-transform: uppercase;
+  text-transform: capitalize;
+  margin-bottom: 5px;
 }
 .signup > p {
   color: rgb(100, 98, 98);
@@ -24,6 +26,20 @@
   margin-top: 25px;
 }
 
+.signup__formCheckItem {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  font-size: 10px;
+  font-weight: 700;
+  align-items: center;
+}
+
+.signup__formCheckItem > input {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
 .signup__formItem > input {
   border-radius: 5px;
   outline: none;
@@ -34,7 +50,7 @@
 
 .signup > form > button {
   padding: 3% 10%;
-  background-color: #ca0e00;
+  background-color: #b8336a;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
@@ -51,8 +67,10 @@
   visibility: hidden;
   color: red;
   margin: 10px 0;
+  font-size: 0px;
 }
 
 .signup__error.show {
   visibility: visible;
+  font-size: 15px;
 }

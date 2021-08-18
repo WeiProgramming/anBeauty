@@ -1,5 +1,5 @@
 .home__hero {
-  background-image: url('../../assets/images/hero-bg.png');
+  background-image: url('../../assets/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -7,6 +7,11 @@
   height: 100vh;
   padding: 0 5%;
 }
+.home__hero > * {
+  position: relative;
+  z-index: 10;
+}
+
 @media only screen and (max-width: 800px) {
   .home__hero {
     display: flex;
@@ -21,19 +26,20 @@
   flex: 0.5;
   justify-content: center;
   margin-right: 5%;
+  margin-bottom: 20%;
 }
 
 .home__left > h1 {
   font-size: 60px;
-  text-shadow: 2px 2px rgb(197, 40, 40);
+  text-shadow: 2px 2px rgb(209 170 250);
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 20px;
 }
 
 .home__left > h1 > span {
-  color: #d3312b;
-  text-shadow: 2px 2px rgb(238, 12, 12);
+  color: #b8336a;
+  text-shadow: 2px 2px rgb(209 170 250);
 }
 
 .home__left > h2 {
@@ -55,4 +61,5 @@
   justify-content: center;
   align-items: center;
   flex: 0.5;
+  margin-bottom: 20%;
 }
