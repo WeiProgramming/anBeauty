@@ -1,6 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import Home from './Components/home/Home'
+import Auth from './Components/auth/auth'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import QuestionForm from './Components/questionform/QuestionForm'
 import Footer from './Components/footer/footer'
@@ -72,15 +73,20 @@ function App() {
           This is an error alert — <strong>check it out!</strong>
         </Alert>
         <Navigation></Navigation>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-
-          <Route path="/question">
-            <QuestionForm />
-          </Route>
-        </Switch>
+        <div className="app__main">
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/auth">
+              <Auth />
+            </Route>
+            <Route path="/question">
+              <QuestionForm />
+            </Route>
+          
+          </Switch>
+        </div>
         <Footer />
       </div>
     </Router>

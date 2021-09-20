@@ -1,6 +1,9 @@
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 10px;
   left: 5px;
   font-weight: 700;
+  border: 1px solid black;
+  min-height: 100px;
+  margin: 0 1%;
 }

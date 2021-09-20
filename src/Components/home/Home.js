@@ -2,10 +2,7 @@ import React, { useRef } from 'react'
 import './Home.css'
 import Signup from '../signup/Signup'
 
-import {isUserAuthenticated} from '../../services/auth'
-
 const Home = () => {
-  console.log('checking if user is auth', isUserAuthenticated());
   return (
     <div className="home">
       <div className="home__hero">
